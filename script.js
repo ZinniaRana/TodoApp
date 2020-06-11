@@ -27,7 +27,7 @@ function addtodo(event){
         tododiv.appendChild(newtodo);
 
         //ADD todo to local storage
-        saveLocalTodos(todotask.value);
+        //saveLocalTodos(todotask.value);
 
         //CREATE trash button
         const trashbtn = document.createElement('button');
@@ -98,7 +98,7 @@ function filterTodo(event){
     });
 }
 
-function saveLocalTodos(todo){
+/*function saveLocalTodos(todo){
     //Check
     let todos;
     if(localStorage.getItem('todos') === "null"){
@@ -110,3 +110,4 @@ function saveLocalTodos(todo){
     todos.push(todo);
     localStorage.setItem('todos', JSON.stringify(todos));
 }
+*/
