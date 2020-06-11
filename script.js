@@ -13,40 +13,41 @@ filterOption.addEventListener('change', filterTodo);
 function addtodo(event){
     //Prevent form from submitting
     event.preventDefault();
-    
+    if(todotask.value !== ""){
             //TODO DIV
-        const tododiv = document.createElement('div');
-        tododiv.classList.add('todo');
-
-        //Create li
-        const newtodo = document.createElement('li');
-        newtodo.innerText = todotask.value;
-        newtodo.classList.add('todo-item');
-
-        // APPEND li to div todo
-        tododiv.appendChild(newtodo);
-
-        //ADD todo to local storage
-        //saveLocalTodos(todotask.value);
-
-        //CREATE trash button
-        const trashbtn = document.createElement('button');
-        trashbtn.innerHTML = '<i class="fas fa-trash"></i>';
-        trashbtn.classList.add('trash-btn');
-
-        //CREATE checkmark button
-        const checkbtn = document.createElement('button');
-        checkbtn.innerHTML = '<i class="fas fa-check"></i>';
-        checkbtn.classList.add('check-btn');
-
-        tododiv.appendChild(checkbtn);
-        tododiv.appendChild(trashbtn);
-
-        //APPEND tododiv to todo-list
-        todolist.appendChild(tododiv);
-
-        //Clear todo task value 
-        todotask.value = "";
+            const tododiv = document.createElement('div');
+            tododiv.classList.add('todo');
+    
+            //Create li
+            const newtodo = document.createElement('li');
+            newtodo.innerText = todotask.value;
+            newtodo.classList.add('todo-item');
+    
+            // APPEND li to div todo
+            tododiv.appendChild(newtodo);
+    
+            //ADD todo to local storage
+            //saveLocalTodos(todotask.value);
+    
+            //CREATE trash button
+            const trashbtn = document.createElement('button');
+            trashbtn.innerHTML = '<i class="fas fa-trash"></i>';
+            trashbtn.classList.add('trash-btn');
+    
+            //CREATE checkmark button
+            const checkbtn = document.createElement('button');
+            checkbtn.innerHTML = '<i class="fas fa-check"></i>';
+            checkbtn.classList.add('check-btn');
+    
+            tododiv.appendChild(checkbtn);
+            tododiv.appendChild(trashbtn);
+    
+            //APPEND tododiv to todo-list
+            todolist.appendChild(tododiv);
+    
+            //Clear todo task value 
+            todotask.value = "";
+    }  
 }
 
 function deleteCheck(event){
